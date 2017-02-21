@@ -94,8 +94,8 @@ export default class HB1 extends Component {
                  .map(str => parseFloat(str)),
          index = paths.indexOf(path),
          rank = parseInt(data[index].rank),
-         x = points[0] + 800,
-         y = points[1] + 800,
+         x = points[0] + 700,
+         y = points[1] + 710,
          className = "hex";
 
      let numLCA = stringToInt(data[index].number_of_lca);
