@@ -1,6 +1,7 @@
 # Top 100 HB1 Visa Sponsors
 
-wip
+Part 2
+This project explores using React for drag behavior, and add some refinements to spiral.
 
 ## Start
 
