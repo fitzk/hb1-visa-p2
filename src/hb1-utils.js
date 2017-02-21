@@ -47,18 +47,13 @@ const createDisjointPaths = spiral => {
 	return paths;
 }
 
-const drawInnerSpiral = () => {}
 const drawSpiral = (data, curve) => {
 
-	let angle = d3.scaleLinear().domain([0, 99]).range([0, 360*5]);
-	console.log('data[0]: ' + data[0] + "data[1]: " + data[data.length-1])
+	// 5 spirals
+	let angle = d3.scaleLinear().domain([0, 99]).range([0, 360 * 5]);
 	let extent = d3.extent(data);
-	console.log('extent: ', extent);
-
-
 	let radius = d3.scaleLog().domain(extent)
       .range([150, 600]);
-
 	let spiral = d3.radialLine()
 	.radius(d => radius(d))
 	.angle(( d, i ) =>  angle(i))
