@@ -18,15 +18,13 @@ injectGlobal`
   }
 `;
 
-const Container = styled.div`
-  display: flex;
-  flex-flow: column wrap;
-`;
 
-const InputContainer = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-`;
+const Title = styled.h1`
+  color: white;
+  font-family: sans-serif;
+  position: absolute;
+  margin: 50px;
+`
 
 const Svg = styled.svg`
   overflow: auto;
@@ -95,7 +93,7 @@ export default class HB1 extends Component {
          index = paths.indexOf(path),
          rank = parseInt(data[index].rank),
          x = points[0] + 700,
-         y = points[1] + 710,
+         y = points[1] + 750,
          className = "hex";
 
      let numLCA = stringToInt(data[index].number_of_lca);
@@ -143,10 +141,12 @@ export default class HB1 extends Component {
   }
 
   render() {
-    return this.state.data.length > 0 ? <Svg
-           width="100vw"
+    return this.state.data.length > 0 ? <div>
+      <Title>Top 100 HB1 Visa Sponsors</Title>
+          <Svg  width="100vw"
            height="180vh">
-                        { this.drawLayout(this.state.data) }
-          </Svg> : <div>loading...</div>
+           { this.drawLayout(this.state.data) }
+          </Svg>
+        </div> : <div>loading...</div>
   }
 }
